@@ -1,0 +1,34 @@
+.reviews-container {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review {
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    padding: 20px;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+
+ 
+}
+
+.review-icon {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: -50px;
+    // transform: trnaslate(-50%, -50%);
+}
+
+.review-text {
+    margin-top: -50px;
+}

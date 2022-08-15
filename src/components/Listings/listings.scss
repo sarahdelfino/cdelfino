@@ -1,0 +1,145 @@
+.listing-header {
+    padding-left: 10px;
+    color: #006161;
+}
+
+h3, h4 {
+    margin: 5px;
+    font-size: 1.25em;
+    // color: #d9d3d1;
+}
+
+.listings-container {
+    width: 350px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.listing {
+    width: 345px;
+    height: auto;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: 1px solid green;
+    background-color: white;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+    padding: 2px;
+}
+
+.listing-info {
+    width: 330px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.listing-image {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+.listing-text {
+    display: block;
+}
+
+.listing-arrow {
+    position: relative;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.property-container {
+    width: 350px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 50px;
+}
+
+.property {
+    width: 350px;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.property-image-container {
+    width: 100%;
+    height: 200px;
+    border: 1px solid red;
+    border-radius: 10px;
+}
+
+.property-text {
+    padding: 10px;
+}
+
+.price {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.listing-icon-flex-container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    // width: 275px;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.listing-icon-flex {
+    width: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon-flex-container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 275px;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.icon-flex {
+    width: 70px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.show-more {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.expanded-property {
+    height: auto;
+    text-align: left;
+}
+
+.schedule-button-container {
+    text-align: center;
+}
+
+.schedule-button {
+    width: 250px;
+    height: 75px;
+    border-radius: 10px;
+    font-size: 1.4em;
+    background-color: #006161;
+    border: none;
+    color: white;
+    font-weight: bold;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+    margin-top: 20px;
+    margin-right: 5px;
+    margin-bottom: 40px;
+}

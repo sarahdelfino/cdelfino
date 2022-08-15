@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Pacifico&family=Poppins:wght@600&display=swap');
+
+h1 {
+    margin-bottom: 5px;
+    font-size: 2.5em;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.app-container {
+    // border: 1px solid red;
+}
+
+.home-background-image {
+    background-image: url('../../images/alex-perez-NLUkAA-nDdE-unsplash-sm.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position: left;
+    border-radius: 10px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    margin-bottom: 50px;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+
+}
+
+.home-text {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: #006161;
+    animation: textEnter 3s forwards;
+}
+
+.home-buttons-container {
+    display: flex;
+    width: 225px;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-button {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1.125em;
+    background-color: #006161;
+    border: none;
+    color: white;
+    font-weight: bold;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+
+}
+
+.contact-button {
+    background-color: white;
+    color: #006161;
+}
+
+@keyframes textEnter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

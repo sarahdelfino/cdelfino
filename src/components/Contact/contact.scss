@@ -1,0 +1,42 @@
+input {
+    width: 125px;
+    height: 45px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.contact-container {
+    width: 310px;
+    border-radius: 10px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 50px;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+
+}
+
+.contact-text {
+    margin-top: 20px;
+}
+
+.button-container {
+    text-align: right;
+}
+
+.submit-button {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1.125em;
+    background-color: #006161;
+    border: none;
+    color: white;
+    font-weight: bold;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+    margin-top: 20px;
+    margin-right: 5px;
+}
