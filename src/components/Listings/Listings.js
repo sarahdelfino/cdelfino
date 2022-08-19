@@ -1,13 +1,8 @@
-
 import React, { Component } from 'react'
 import './listings.scss'
-import { listings } from './listings-mock'
-import { ReactComponent as RightArrow } from '../../images/arrow.svg'
-import bedIcon from '../../images/bed.png'
-import bathIcon from '../../images/bath.png'
-import sqFeetIcon from '../../images/3d-printer.png'
-import arrowDown from '../../images/arrow-down.png'
-import arrowUp from '../../images/up-arrow.png'
+import { listings } from './PropertyList/listings-mock'
+import PropertyList from './PropertyList/PropertyList'
+import PropertyDetails from './PropertyDetails/PropertyDetails'
 
 const listingsMock = [
     {
@@ -36,27 +31,27 @@ class Listings extends Component {
         this.state = {
             propertyClicked: false,
             selectedProperty: {},
-            seeMore: false
+            seeMore: false,
+            propertyIndex: null
         }
     }
 
     render() {
-        const openProperty = (e) => {
-            console.log(e);
-            this.setState({
-                propertyClicked: true,
-                selectedProperty: e
-            })
-        }
-
-        const expandedClicked = () => {
-            this.state.seeMore ?
+        const openProperty = (e, i) => {
+            let pIndex = e.target.id.slice(-1);
+            if (this.state.propertyClicked) {
                 this.setState({
-                    seeMore: false
-                }) :
-                this.setState({
-                    seeMore: true
+                    propertyClicked: false,
+                    selectedProperty: null,
+                    propertyIndex: null
                 })
+            } else {
+                this.setState({
+                    propertyClicked: true,
+                    selectedProperty: e,
+                    propertyIndex: pIndex
+                })
+            }
         }
 
         const isClicked = this.state.propertyClicked;
@@ -65,70 +60,13 @@ class Listings extends Component {
         return (
             <div className='listings-container'>
                 <h2 style={{ color: 'white' }}>Listings</h2>
-                {!isClicked ?
-                    listingsMock.map((listing, index) => (
-                        <div className='listing'>
-                            <div className='listing-info'>
-                                <div className='listing-image'></div>
-                                <div className='listing-text'>
-                                    <h3>{listing.address}</h3>
-                                    <h3>{listing.price}</h3>
-                                    <h3>Beds: {listing.bed}</h3>
-                                    <h3>Baths: {listing.bath}</h3>
-                                </div>
-                                <div className='listing-arrow'>
-                                    <RightArrow
-                                        id={`listing-arrow-${index}`}
-                                        onClick={() => openProperty(listing)}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                    : <div className='property-container'>
-                        <div className='property'>
-                            <div className='property-image-container'></div>
-                            <div className='property-text'>
-                                <h3 className='price'>${this.state.selectedProperty.price}</h3>
-                                <h3>{this.state.selectedProperty.address},</h3>
-                                <h3>{this.state.selectedProperty.city}</h3>
-                                <div className='icon-flex-container'>
-                                    <div className='icon-flex'>
-                                        <h3>{this.state.selectedProperty.bed}</h3>
-                                        <img src={bedIcon} />
-                                    </div>
-                                    <div className='icon-flex'>
-                                        <h3>{this.state.selectedProperty.bath}</h3>
-                                        <img src={bathIcon} />
-                                    </div>
-                                    <div className='icon-flex'>
-                                        <h3>{this.state.selectedProperty.sqFeet}</h3>
-                                        <img src={sqFeetIcon} />
-                                    </div>
-                                </div>
-                                <div className='show-more'>
-                                    {!isExpanded ?
-                                        <h3>Show More</h3> :
-                                        <div className='expanded-property'>
-                                            <ul>
-                                                <li>asd</li>
-                                                <li>asd</li>
-                                                <li>asd</li>
-                                                <li>asd</li>
-                                                <li>asd</li>
-                                                <li>asd</li>
-                                            </ul>
-                                            <div className='schedule-button-container'>
-                                                <button className='schedule-button'>Schedule a showing</button>
-                                            </div>
-                                            <h3 style={{ textAlign: 'center' }}>Show Less</h3>
-                                        </div>
-                                    }
-                                    <img src={!isExpanded ? arrowDown : arrowUp} onClick={() => expandedClicked()} />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                {listingsMock.map((listing, index) => (
+                    <ul style={{ listStyle: 'none', paddingLeft: '0' }}>
+                    <li key={`${listing.address}`+`${listing.sqFeet.toString()}`} className='listing'>
+                        <PropertyList click={openProperty} listing={listing} id={index} />
+                    </li>
+                    </ul>
+                ))
                 }
             </div>
         )
